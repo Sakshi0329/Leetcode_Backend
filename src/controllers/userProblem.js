@@ -1,3 +1,4 @@
+const mongoose=require('mongoose')
 const {getLanguageById,submitBatch,submitToken} = require("../utils/problemUtility");
 const Problem = require("../models/problem");
 const User = require("../models/user");
@@ -56,7 +57,7 @@ const createProblem = async (req,res)=>{
 
 
       // We can store it in our DB
-console.log("All test cases passed. Creating problem...",req.body);
+// console.log("All test cases passed. Creating problem...",req.body);
     const userProblem =  await Problem.create({
         ...req.body,
         problemCreator: req.result._id
@@ -68,6 +69,7 @@ console.log("All test cases passed. Creating problem...",req.body);
         res.status(400).send("Error: "+err);
     }
 }
+
 
 const updateProblem = async (req,res)=>{
     
@@ -136,6 +138,7 @@ const updateProblem = async (req,res)=>{
       res.status(500).send("Error: "+err);
   }
 }
+
 
 const deleteProblem = async(req,res)=>{
 
