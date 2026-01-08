@@ -9,8 +9,8 @@ const createProblem = async (req,res)=>{
    
   // API request to authenticate user:
     const {title,description,difficulty,tags,
-        visibleTestCases,hiddenTestCases,startCode,
-        referenceSolution, problemCreator
+        visibleTestCases= [],hiddenTestCases= [],startCode= [],
+        referenceSolution= [], problemCreator
     } = req.body;
 
 

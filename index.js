@@ -27,6 +27,9 @@ app.use('/submission',submitRouter);
 app.use('/ai',aiRouter);
 app.use("/video",videoRouter);
 
+ app.get("/",(req,res)=>{
+    res.send("Welcome to Leetcode Backend! Your server is live.");
+ })
 app.get('/apitesting',(req,res)=>{
     res.send("This is testing api")
 })
