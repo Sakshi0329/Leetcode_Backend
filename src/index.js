@@ -35,6 +35,7 @@ app.get("/apitesting", (req, res) => {
 });
 const InitalizeConnection = async () => {
   try {
+    console.log("REDIS_URL:", process.env.REDIS_URL);
     await Promise.all([main(), redisClient.connect()]);
     console.log("DB Connected");
 
